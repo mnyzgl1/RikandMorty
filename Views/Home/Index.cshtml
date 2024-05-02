@@ -1,0 +1,105 @@
+﻿@model List<Karakter>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+
+  
+
+    #divcart{
+        border:7px inset green;
+      display: flex;
+        justify-content: center;    
+        margin:50px;
+        
+    }
+
+    .fill {
+        position: relative;
+        //display:block;
+        height: 45px;
+        width: 150px;
+        margin: 10px 7px;
+        padding: 5px 5px;
+        font-weight: 400;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 13px;
+        letter-spacing: 2px;
+        color:peru;
+        border: 2px #383736 solid;
+        border-radius: 4px;
+        text-transform: uppercase;
+        text-align:center;
+        outline: 0;
+        overflow: hidden;
+        background: none;
+        z-index: 1;
+        cursor: pointer;
+        transition: 0.08s ease-in;
+        -o-transition: 0.08s ease-in;
+        -ms-transition: 0.08s ease-in;
+        -moz-transition: 0.08s ease-in;
+        -webkit-transition: 0.08s ease-in;
+    }
+
+        .fill:hover {
+            color:black;
+        }
+
+        .fill:before {
+            content: "";
+            position: absolute;
+            background: orange;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 100%;
+            z-index: -1;
+            -webkit-transition: top 0.09s ease-in;
+        }
+
+        .fill:hover:before {
+            top: 0;
+
+        }
+        #başlık{
+
+    
+        background-color:yellow;
+        text-align: center;
+    }
+        
+
+    h1 {
+        font-size: 90px;
+        font-family: 'Luckiest Guy';
+        color: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-shadow: 0px -6px 0 #212121, 0px -6px 0 #212121, 0px 6px 0 #212121, 0px 6px 0 #212121, -6px 0px 0 #212121, 6px 0px 0 #212121, -6px 0px 0 #212121, 6px 0px 0 #212121, -6px -6px 0 #212121, 6px -6px 0 #212121, -6px 6px 0 #212121, 6px 6px 0 #212121, -6px 18px 0 #212121, 0px 18px 0 #212121, 6px 18px 0 #212121, 0 19px 1px rgba(0,0,0,.1), 0 0 6px rgba(0,0,0,.1), 0 6px 3px rgba(0,0,0,.3), 0 12px 6px rgba(0,0,0,.2), 0 18px 18px rgba(0,0,0,.25), 0 24px 24px rgba(0,0,0,.2), 0 36px 36px rgba(0,0,0,.15);
+    }
+
+</style>
+<div id="başlık">
+    <h1>Rick and Morty
+</h1>
+</div>
+@foreach (var Karakters in @Model)
+{
+    <div id="divcart" class="card" style="width: 18rem; float:left;">
+        <img src=@Karakters.Image class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Karakters.Name</h5>
+            <p class="card-text">@Karakters.Id</p>
+            <p class="card-text">@Karakters.Species</p>
+            <p class="card-text">@Karakters.Status</p>
+          
+            <button class="fill">Karakter Özellikleri</button>
+        </div>
+        <body style="background-color:yellow;">
+        </body>
+       
+    </div>
+}
+
+ 
